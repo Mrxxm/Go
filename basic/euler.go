@@ -1,4 +1,5 @@
 package main
+// 2.2内置变量
 
 import (
 	"fmt"
