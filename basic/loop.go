@@ -1,4 +1,5 @@
 package main
+// 2.4循环语句
 
 import (
 	"fmt"

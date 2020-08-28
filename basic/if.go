@@ -1,4 +1,5 @@
 package main
+// 2.4条件语句
 
 import (
 	"fmt"
