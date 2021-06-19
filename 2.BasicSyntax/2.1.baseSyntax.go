@@ -1,15 +1,18 @@
 package main
-// 2.1基本语法
 
 import "fmt"
 
 // 包内变量
-var a, b, c = 1, 2, "3"
-// 使用括号
+var a = 1
+var b = 2
+var c = "巴拉巴拉"
+
+var d, e, f = 4, 5, "6"
+
 var (
-	d = 4
-	e = 5
-	f = "6"
+	g = 7
+	h = 8
+	i = "9"
 )
 
 func variableZeroValue() {
@@ -19,8 +22,8 @@ func variableZeroValue() {
 }
 
 func variableInitialValue() {
-	var age, height int = 25, 175
-	var str string = "今天学习go语言"
+	var age, height = 25, 175
+	var str = "今天学习go语言"
 	// 变量定义了一定要被使用
 	fmt.Println(age, height, str)
 }
@@ -38,10 +41,10 @@ func variableShorter() {
 }
 
 func main() {
-	fmt.Println("hello world!")
+	fmt.Println("hello go world!")
+	fmt.Println(a, b, c, d, e, f, g, h, i)
 	variableZeroValue()
 	variableInitialValue()
 	variableTypeDeduction()
 	variableShorter()
-	fmt.Println(a, b, c, d, e, f)
 }
