@@ -58,12 +58,30 @@ func update(arr []int) {
 }
 
 func main() {
-	
+
+	// 1.slice引用传递
+	//arr := [...]int{0, 1, 2, 3, 4, 5, 6, 7}
+	//s := arr[2:6]
+	//update(s)
+	//fmt.Println("s =", s)
+	//fmt.Println("arr =", arr)
+
+	// 2.Reslice
+	//arr := [...]int{0, 1, 2, 3, 4, 5, 6, 7} // 初始化数组
+	//s2 := arr[:]
+	//fmt.Println("s2 =", s2)
+	//s2 = s2[:5]
+	//fmt.Println("s2 =", s2)
+	//s2 = s2[2:]
+	//fmt.Println("s2 =", s2)
+
+	// 3.slice扩展
 	arr := [...]int{0, 1, 2, 3, 4, 5, 6, 7}
-	s := arr[2:6]
-	update(s)
-	fmt.Println("s =", s)
-	fmt.Println("arr =", arr)
+	s1 := arr[2:6]
+	s2 := s1[3:5]
+	fmt.Printf("s1=%v, len(s1)=%d, cap(s1)=%d\n", s1, len(s1), cap(s1))
+	fmt.Printf("s2=%v, len(s2)=%d, cap(s2)=%d\n", s2, len(s2), cap(s2))
+
 	//fmt.Println(arr[2:5])
 	//fmt.Println(arr[:])
 	//changeArr(arr[3:4])
