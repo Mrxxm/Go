@@ -87,9 +87,9 @@ func lengthOfLongestSubstring(s string) int {
 		if lastI, ok = lastOccurred[ch]; ok && lastI >= start {
 			start = lastI + 1
 		}
-		//fmt.Printf("i = %v, ch = %v, lastI = %v, ok = %v, start = %v, lastOccurred = %v",
-		//	i, ch, lastI, ok, start, lastOccurred)
-		//fmt.Println();
+		fmt.Printf("i = %v, ch = %v, lastI = %v, ok = %v, start = %v, lastOccurred = %v",
+			i, ch, lastI, ok, start, lastOccurred)
+		fmt.Println();
 
 		if i - start + 1 > maxLength {
 			maxLength = i - start + 1
@@ -110,5 +110,5 @@ func main() {
 	// 4.删除元素
 	//deletingElements()
 	// 5.寻找最长不含有重复字符的子串
-	fmt.Println(lengthOfLongestSubstring("abcabcdabc"))
+	fmt.Println(lengthOfLongestSubstring("aaabcdefd"))
 }
