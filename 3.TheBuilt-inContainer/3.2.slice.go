@@ -40,7 +40,7 @@ func sliceExtendsAdd() {
 }
 
 func printSlice(slice []int) {
-	fmt.Printf("len=%d, cap=%d\n", len(slice), cap(slice))
+	fmt.Printf("slice=%v, len=%d, cap=%d\n", slice, len(slice), cap(slice))
 }
 
 // 创建slice
@@ -55,6 +55,51 @@ func createSlice() {
 
 func update(arr []int) {
 	arr[0] = 100
+}
+
+func copyingSlice() {
+	// 1.
+	s1 := []int{2, 4, 6, 8}
+	// 2.
+	s2 := make([]int, 16)
+
+	printSlice(s1)
+	printSlice(s2)
+	fmt.Println("Copying slice")
+	copy(s2, s1)
+	printSlice(s2)
+}
+
+func deletingSlice() {
+	// 1.
+	s1 := []int{2, 4, 6, 8}
+
+	// 2.
+	s2 := make([]int, 16)
+	copy(s2, s1)
+
+	printSlice(s2)
+	// 将s2中的元素8删除
+	fmt.Println("Deleting elements from slice")
+	s2 = append(s2[:3], s2[4:]...)
+	printSlice(s2)
+}
+
+func poppingFromFrontOrBack() {
+	// 1.
+	s1 := []int{2, 4, 6, 8}
+
+	fmt.Println("Popping from front")
+	front := s1[0]
+	s1 = s1[1:]
+	fmt.Println("front =", front)
+	fmt.Println("s1 =", s1)
+
+	fmt.Println("Popping from back")
+	back := s1[len(s1) - 1]
+	s1 = s1[:len(s1) - 1]
+	fmt.Println("back =", back)
+	fmt.Println("s1 =", s1)
 }
 
 func main() {
@@ -76,20 +121,41 @@ func main() {
 	//fmt.Println("s2 =", s2)
 
 	// 3.slice扩展
-	arr := [...]int{0, 1, 2, 3, 4, 5, 6, 7}
-	s1 := arr[2:6]
-	s2 := s1[3:5]
-	fmt.Printf("s1=%v, len(s1)=%d, cap(s1)=%d\n", s1, len(s1), cap(s1))
-	fmt.Printf("s2=%v, len(s2)=%d, cap(s2)=%d\n", s2, len(s2), cap(s2))
+	//arr := [...]int{0, 1, 2, 3, 4, 5, 6, 7}
+	//s1 := arr[2:6]
+	//s2 := s1[3:5]
+	//fmt.Printf("s1=%v, len(s1)=%d, cap(s1)=%d\n", s1, len(s1), cap(s1))
+	//fmt.Printf("s2=%v, len(s2)=%d, cap(s2)=%d\n", s2, len(s2), cap(s2))
 
 	//fmt.Println(arr[2:5])
 	//fmt.Println(arr[:])
 	//changeArr(arr[3:4])
 	//fmt.Println(arr)
-	//
+
 	//sliceExtends()
-	//
+	// 4.slice添加元素
 	//sliceExtendsAdd()
 
+	// 5.创建slice
 	//createSlice()
+	// 1.
+	//s1 := []int{2, 4, 6, 8}
+	//
+	//// 2.
+	//s2 := make([]int, 16)
+	//
+	//// 3.
+	//s3 := make([]int, 10, 32)
+	//printSlice(s1)
+	//printSlice(s2)
+	//printSlice(s3)
+
+	// 6.Copying slice
+	//copyingSlice()
+
+	// 7.Deleting slice
+	//deletingSlice()
+
+	// 8.popping
+	poppingFromFrontOrBack()
 }
