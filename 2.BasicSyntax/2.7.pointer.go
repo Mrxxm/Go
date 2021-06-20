@@ -19,12 +19,17 @@ import "fmt"
  }
 
 func main() {
-	var a int = 2
-	var pa *int = &a
-	*pa = 3
-	fmt.Println(a)
-	fmt.Println(swap(1, 2))
-	c, d := 3, 4
-	swap2(&c, &d)
-	fmt.Println(c, d)
+	//var a = 2
+	//var pa = &a
+	//*pa = 3
+	//fmt.Println(a)
+	//fmt.Println(swap(1, 2))
+	//c, d := 3, 4
+	//swap2(&c, &d)
+	//fmt.Println(c, d)
+
+	var e *int
+	f := 10
+	e = &f
+	fmt.Println(e, f, &f, *e)
 }

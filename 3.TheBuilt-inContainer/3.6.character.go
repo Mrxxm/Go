@@ -64,7 +64,7 @@ func charDemo() {
 }
 
 func otherChar() {
-	
+
 }
 
 func main() {
