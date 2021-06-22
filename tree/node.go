@@ -7,19 +7,20 @@ type Node struct {
 	Value int
 }
 
-func InitStruct() {
+func InitStruct() Node {
 	// 1.初始化struct
 	// 方式一
 	var root Node
 
-	root = Node{Value:2}
-	root.Left = &Node{} // Left 是指针，所以传递给Left是变量地址，需要加&号
+	root = Node{Value: 4}
+	root.Left = &Node{Value: 2} // Left 是指针，所以传递给Left是变量地址，需要加&号
 	root.Left.Right = CreateNode(3)
-	root.Right = &Node{nil, nil, 4}
-	root.Right.Left = new(Node)
-	root.Right.Left.SetValue2(5)
+	root.Left.Left = &Node{Value: 1}
+	root.Right = &Node{nil, nil, 5}
+	root.Right.Right = new(Node)
+	root.Right.Right.SetValue2(6)
 
-	root.Traverse()
+	return root
 }
 
 // 工厂函数
