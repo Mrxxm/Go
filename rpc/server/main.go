@@ -14,7 +14,7 @@ import (
 */
 func handler(w http.ResponseWriter, r *http.Request) {
 	// 1.页面返回输出
-	fmt.Fprintf(w, "Hello, World!\n")
+	//fmt.Fprintf(w, "Hello, World!\n")
 
 	// 2.打印路径
 	// 解析参数
