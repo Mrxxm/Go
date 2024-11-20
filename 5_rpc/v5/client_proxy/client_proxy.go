@@ -1,7 +1,7 @@
 package client_proxy
 
 import (
-	"Go/5.rpc/v5/handler"
+	"Go/5_rpc/v5/handler"
 	"net/rpc"
 )
 

@@ -1,8 +1,8 @@
 package main
 
 import (
-	"Go/5.rpc/v5/handler"
-	"Go/5.rpc/v5/server_proxy"
+	"Go/5_rpc/v5/handler"
+	"Go/5_rpc/v5/server_proxy"
 	"net"
 	"net/rpc"
 )

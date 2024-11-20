@@ -1,7 +1,7 @@
 package main
 
 import (
-	"Go/5.rpc/v5/client_proxy"
+	"Go/5_rpc/v5/client_proxy"
 	"fmt"
 )
 

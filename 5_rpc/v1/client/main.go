@@ -10,7 +10,7 @@ type ResponseData struct {
 	Data int `json:"data"`
 }
 
-// 5.rpc 远程调用，如何像本地调用一样
+// 5_rpc 远程调用，如何像本地调用一样
 
 func Add(a, b int) int {
 	req := HttpRequest.NewRequest()
