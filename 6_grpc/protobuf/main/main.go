@@ -1,7 +1,7 @@
 package main
 
 import (
-	"Go/6_grpc/proto/protobuf"
+	"Go/6_grpc/protobuf"
 	"encoding/json"
 	"fmt"
 
@@ -15,7 +15,6 @@ type Hello struct {
 }
 
 func main() {
-
 	// 1.protobuf
 	req := protobuf.HelloRequest{
 		Name:    "xxm",
@@ -26,7 +25,6 @@ func main() {
 	if err != nil {
 		return
 	}
-
 	fmt.Println(len(marshal))
 
 	// 2.json

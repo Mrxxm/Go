@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option go_package = ".;protobuf";
+
+message HelloRequest { // message对应创建结构体
+  string name = 1; // 1是编号不是值
+  int32 age = 2;
+  repeated string courses = 3; // repeated 表示切片
+}
