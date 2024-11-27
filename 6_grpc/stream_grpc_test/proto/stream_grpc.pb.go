@@ -28,6 +28,7 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GreeterClient interface {
+	// stream关键字
 	GetStream(ctx context.Context, in *StreamReqData, opts ...grpc.CallOption) (grpc.ServerStreamingClient[StreamResData], error)
 	PutStream(ctx context.Context, opts ...grpc.CallOption) (grpc.ClientStreamingClient[StreamReqData, StreamResData], error)
 	AllStream(ctx context.Context, opts ...grpc.CallOption) (grpc.BidiStreamingClient[StreamReqData, StreamResData], error)
@@ -90,6 +91,7 @@ type Greeter_AllStreamClient = grpc.BidiStreamingClient[StreamReqData, StreamRes
 // All implementations should embed UnimplementedGreeterServer
 // for forward compatibility.
 type GreeterServer interface {
+	// stream关键字
 	GetStream(*StreamReqData, grpc.ServerStreamingServer[StreamResData]) error
 	PutStream(grpc.ClientStreamingServer[StreamReqData, StreamResData]) error
 	AllStream(grpc.BidiStreamingServer[StreamReqData, StreamResData]) error
