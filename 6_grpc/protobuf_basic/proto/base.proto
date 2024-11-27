@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = ".;proto";
+
+enum Gender{
+  MALE = 0;
+  FEMALE = 1;
+}
+
+message Pong {
+  string id = 1;
+  Gender g = 2;
+  map<string, string> mp = 3;
+  google.protobuf.Timestamp addTime = 4;
+}
+

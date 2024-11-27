@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+import "base.proto"; // 引入base.proto文件
+import "google/protobuf/empty.proto"; // 引入google官方的empty.proto文件
+
+option go_package = ".;proto";
+
+service Greeter { // 生成的服务接口
+  rpc Ping(google.protobuf.Empty) returns (Pong);
+}
+
+
+message HelloRequest { // 生成的请求消息
+  string name = 1;
+  message Result {
+    string name = 1;
+    string url = 2;
+  }
+}
