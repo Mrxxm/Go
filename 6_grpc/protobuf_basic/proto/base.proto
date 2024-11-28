@@ -11,8 +11,8 @@ enum Gender{
 
 message Pong {
   string id = 1;
-  Gender g = 2;
-  map<string, string> mp = 3;
-  google.protobuf.Timestamp addTime = 4;
+  Gender g = 2; // 枚举类型
+  map<string, string> mp = 3; // map类型
+  google.protobuf.Timestamp addTime = 4; // 时间戳类型
 }
 
