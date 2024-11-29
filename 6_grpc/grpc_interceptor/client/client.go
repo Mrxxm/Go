@@ -12,7 +12,7 @@ import (
 func interceptor(ctx context.Context, method string, req, reply interface{}, cc *grpc.ClientConn, invoker grpc.UnaryInvoker, opts ...grpc.CallOption) error {
 	start := time.Now()
 	err := invoker(ctx, method, req, reply, cc, opts...)
-	fmt.Printf("method=%s req=%v rep=%v duration=%s error=%v\n", method, req, reply, time.Since(start), err)
+	fmt.Printf("method=%s req=%v rep=%v start_time=%s end_time=%s duration=%s error=%v\n", method, req, reply, start, time.Now(), time.Since(start), err)
 	return err
 }
 
@@ -32,7 +32,7 @@ func main() {
 	defer conn.Close()
 
 	c := proto.NewGreeterClient(conn)
-	r, err := c.SayHello(context.Background(), &proto.HelloRequest{Name: "bobby"})
+	r, err := c.SayHello(context.Background(), &proto.HelloRequest{Name: "xxm"})
 	if err != nil {
 		panic(err)
 	}

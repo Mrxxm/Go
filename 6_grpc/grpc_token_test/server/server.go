@@ -39,15 +39,12 @@ func main() {
 			appid  string
 			appkey string
 		)
-
 		if val, ok := md["appid"]; ok {
 			appid = val[0]
 		}
-
 		if val, ok := md["appkey"]; ok {
 			appkey = val[0]
 		}
-
 		if appid != "101011" || appkey != "xx" {
 			return resp, status.Errorf(codes.Unauthenticated, "Token认证信息无效: appid=%s, appkey=%s", appid, appkey)
 		}
