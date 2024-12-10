@@ -1,7 +1,7 @@
 package main
 
 import (
-	"Go/7_json_protobuf/protobuf"
+	"Go/7_gin/json_and_protobuf/protobuf"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
