@@ -82,10 +82,10 @@ func FilterServices() {
 
 func main() {
 	// 启动调用接口
-	//err := Register("127.0.0.1", 8022, "shop-api", []string{"shop", "api"}, "shop-api")
-	//if err != nil {
-	//	panic(err)
-	//}
+	err := Register("127.0.0.1", 8022, "shop-api", []string{"shop", "api"}, "shop-api")
+	if err != nil {
+		panic(err)
+	}
 	//AllServices()
-	FilterServices()
+	//FilterServices()
 }
