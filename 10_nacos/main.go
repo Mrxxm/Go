@@ -1,6 +1,8 @@
 package main
 
 import (
+	"Go/10_nacos/config"
+	"encoding/json"
 	"fmt"
 	"github.com/nacos-group/nacos-sdk-go/clients"
 	"github.com/nacos-group/nacos-sdk-go/common/constant"
@@ -43,6 +45,15 @@ func main() {
 		panic(err)
 	}
 	fmt.Println(content)
+
+	// json转换映射成结构体
+	jsonBytesContent := []byte(content)
+	serverConfig := config.ServerConfig{}
+	err = json.Unmarshal(jsonBytesContent, &serverConfig)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(serverConfig)
 
 	err = configClient.ListenConfig(vo.ConfigParam{
 		DataId: "user-web.json",
