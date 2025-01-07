@@ -2,11 +2,10 @@ package main
 
 import (
 	"fmt"
-	"time"
-
 	"github.com/nacos-group/nacos-sdk-go/clients"
 	"github.com/nacos-group/nacos-sdk-go/common/constant"
 	"github.com/nacos-group/nacos-sdk-go/vo"
+	"time"
 )
 
 func main() {
@@ -37,7 +36,7 @@ func main() {
 	}
 
 	content, err := configClient.GetConfig(vo.ConfigParam{
-		DataId: "user-web.yaml",
+		DataId: "user-web.json",
 		Group:  "dev"})
 
 	if err != nil {
@@ -46,7 +45,7 @@ func main() {
 	fmt.Println(content)
 
 	err = configClient.ListenConfig(vo.ConfigParam{
-		DataId: "user-web.yaml",
+		DataId: "user-web.json",
 		Group:  "dev",
 		OnChange: func(namespace, group, dataId, data string) {
 			fmt.Println("配置文件变化")

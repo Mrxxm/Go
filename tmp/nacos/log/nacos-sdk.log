@@ -327,3 +327,19 @@
 
 2025-01-07T11:05:13.660+0800	[34mINFO[0m	config_client/config_proxy.go:180	[client.ListenConfig] request params:map[Listening-Configs:user-web.yamldev9811d43a10363e18ad80e95b2be5a94cf26b61d5-6074-44a2-8892-0c0d7e14db15 tenant:f26b61d5-6074-44a2-8892-0c0d7e14db15] header:map[Content-Type:application/x-www-form-urlencoded;charset=utf-8 Long-Pulling-Timeout:30000 accessKey: secretKey:] 
 
+2025-01-07T11:15:31.683+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<tmp/nacos/log>   cacheDir:<tmp/nacos/cache>
+2025-01-07T11:15:40.208+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<tmp/nacos/log>   cacheDir:<tmp/nacos/cache>
+2025-01-07T11:15:40.711+0800	[34mINFO[0m	config_client/config_proxy.go:180	[client.ListenConfig] request params:map[Listening-Configs:user-web.yamldev9811d43a10363e18ad80e95b2be5a94cf26b61d5-6074-44a2-8892-0c0d7e14db15 tenant:f26b61d5-6074-44a2-8892-0c0d7e14db15] header:map[Content-Type:application/x-www-form-urlencoded;charset=utf-8 Long-Pulling-Timeout:30000 Long-Pulling-Timeout-No-Hangup:true accessKey: secretKey:] 
+
+2025-01-07T11:15:40.718+0800	[34mINFO[0m	config_client/config_client.go:433	[client.ListenConfig] no change
+2025-01-07T11:15:40.728+0800	[34mINFO[0m	config_client/config_proxy.go:180	[client.ListenConfig] request params:map[Listening-Configs:user-web.yamldev9811d43a10363e18ad80e95b2be5a94cf26b61d5-6074-44a2-8892-0c0d7e14db15 tenant:f26b61d5-6074-44a2-8892-0c0d7e14db15] header:map[Content-Type:application/x-www-form-urlencoded;charset=utf-8 Long-Pulling-Timeout:30000 accessKey: secretKey:] 
+
+2025-01-07T11:23:45.622+0800	[34mINFO[0m	clients/client_factory.go:47	logDir:<tmp/nacos/log>   cacheDir:<tmp/nacos/cache>
+2025-01-07T11:23:46.125+0800	[34mINFO[0m	config_client/config_proxy.go:180	[client.ListenConfig] request params:map[Listening-Configs:user-web.yamldev9811d43a10363e18ad80e95b2be5a94cf26b61d5-6074-44a2-8892-0c0d7e14db15 tenant:f26b61d5-6074-44a2-8892-0c0d7e14db15] header:map[Content-Type:application/x-www-form-urlencoded;charset=utf-8 Long-Pulling-Timeout:30000 Long-Pulling-Timeout-No-Hangup:true accessKey: secretKey:] 
+
+2025-01-07T11:23:46.132+0800	[34mINFO[0m	config_client/config_client.go:433	[client.ListenConfig] no change
+2025-01-07T11:23:46.143+0800	[34mINFO[0m	config_client/config_proxy.go:180	[client.ListenConfig] request params:map[Listening-Configs:user-web.yamldev9811d43a10363e18ad80e95b2be5a94cf26b61d5-6074-44a2-8892-0c0d7e14db15 tenant:f26b61d5-6074-44a2-8892-0c0d7e14db15] header:map[Content-Type:application/x-www-form-urlencoded;charset=utf-8 Long-Pulling-Timeout:30000 accessKey: secretKey:] 
+
+2025-01-07T11:24:15.649+0800	[34mINFO[0m	config_client/config_client.go:433	[client.ListenConfig] no change
+2025-01-07T11:24:15.659+0800	[34mINFO[0m	config_client/config_proxy.go:180	[client.ListenConfig] request params:map[Listening-Configs:user-web.yamldev9811d43a10363e18ad80e95b2be5a94cf26b61d5-6074-44a2-8892-0c0d7e14db15 tenant:f26b61d5-6074-44a2-8892-0c0d7e14db15] header:map[Content-Type:application/x-www-form-urlencoded;charset=utf-8 Long-Pulling-Timeout:30000 accessKey: secretKey:] 
+
