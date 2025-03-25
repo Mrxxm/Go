@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"github.com/olivere/elastic/v7"
 )
@@ -21,23 +22,23 @@ func main() {
 	}
 
 	// 1.查询数据
-	//q := elastic.NewMatchQuery("address", "street")
-	//result, err := client.Search().Index("user").Query(q).Do(context.Background())
-	//if err != nil {
-	//	panic(err)
-	//}
-	//total := result.Hits.TotalHits.Value
-	//fmt.Printf("搜索结果数量：%d/n", total)
-	//for _, value := range result.Hits.Hits {
-	//	// 将字符串转成struct对象
-	//	account := Account{}
-	//	_ = json.Unmarshal(value.Source, &account)
-	//	fmt.Println(account)
+	q := elastic.NewMatchQuery("address", "street")
+	result, err := client.Search().Index("user").Query(q).Do(context.Background())
+	if err != nil {
+		panic(err)
+	}
+	total := result.Hits.TotalHits.Value
+	fmt.Printf("搜索结果数量：%d/n", total)
+	for _, value := range result.Hits.Hits {
+		// 将字符串转成struct对象
+		account := Account{}
+		_ = json.Unmarshal(value.Source, &account)
+		fmt.Println(account)
 
-	//if jsonData, err := value.Source.MarshalJSON(); err == nil {
-	//	fmt.Println(string(jsonData))
-	//}
-	//}
+		//if jsonData, err := value.Source.MarshalJSON(); err == nil {
+		//	fmt.Println(string(jsonData))
+		//}
+	}
 
 	// 2.添加数据
 	acc := Account{AccountNumber: 14268, FirstName: "xxm"}
