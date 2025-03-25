@@ -5,6 +5,8 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/olivere/elastic/v7"
+	"log"
+	"os"
 )
 
 type Account struct {
@@ -15,7 +17,8 @@ type Account struct {
 func main() {
 	// Create a client
 	host := "http://192.168.15.21:9200"
-	client, err := elastic.NewClient(elastic.SetURL(host), elastic.SetSniff(false))
+	logger := log.New(os.Stdout, "mxshop", log.LstdFlags) // 添加日志
+	client, err := elastic.NewClient(elastic.SetURL(host), elastic.SetSniff(false), elastic.SetTraceLog(logger))
 	if err != nil {
 		// Handle error
 		panic(err)
