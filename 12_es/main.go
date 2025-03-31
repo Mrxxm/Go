@@ -9,6 +9,64 @@ import (
 	"os"
 )
 
+type EsGoods struct {
+}
+
+func (EsGoods) GetMapping() string {
+	goodsMapping := `
+	{
+		"mappings" : {
+			"properties" : {
+				"brands_id" : {
+					"type" : "integer"
+				},
+				"category_id" : {
+					"type" : "integer"
+				},
+				"click_num" : {
+					"type" : "integer"
+				},
+				"fav_num" : {
+					"type" : "integer"
+				},
+				"id" : {
+					"type" : "integer"
+				},
+				"is_hot" : {
+					"type" : "boolean"
+				},
+				"is_new" : {
+					"type" : "boolean"
+				},
+				"market_price" : {
+					"type" : "float"
+				},
+				"name" : {
+					"type" : "text",
+					"analyzer":"ik_max_word"
+				},
+				"goods_brief" : {
+					"type" : "text",
+					"analyzer":"ik_max_word"
+				},
+				"on_sale" : {
+					"type" : "boolean"
+				},
+				"ship_free" : {
+					"type" : "boolean"
+				},
+				"shop_price" : {
+					"type" : "float"
+				},
+				"sold_num" : {
+					"type" : "long"
+				}
+			}
+		}
+	}`
+	return goodsMapping
+}
+
 type Account struct {
 	AccountNumber int32  `json:"account_number"`
 	FirstName     string `json:"firstname"`
@@ -55,4 +113,13 @@ func main() {
 	fmt.Printf("Indexed account %s to index %s, type %s\n", put1.Id, put1.Index, put1.Type)
 	// Use the client
 	_ = client
+
+	// 3.创建索引
+	createIndex, err := client.CreateIndex("goods").BodyString(EsGoods{}.GetMapping()).Do(context.Background())
+	if err != nil {
+		panic(err)
+	}
+	if !createIndex.Acknowledged {
+		fmt.Println("索引已经存在")
+	}
 }
